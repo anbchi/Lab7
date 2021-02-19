@@ -94,6 +94,7 @@
           },
           body: JSON.stringify({title:titleInput,author:authorInput})*/
         })
+        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
           document.getElementById("output").innerHTML = JSON.stringify(data);
@@ -154,6 +155,7 @@
           },
           body: JSON.stringify({title:titleInput,author:authorInput})
         })
+        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
           document.getElementById("output").innerHTML = JSON.stringify(data);
@@ -186,6 +188,7 @@
           },
           body: JSON.stringify({title:titleInput,author:authorInput})
         })
+        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
           document.getElementById("output").innerHTML = JSON.stringify(data);
@@ -208,6 +211,7 @@
         fetch(endPointValue, {
           method: 'delete'
         })
+        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
           document.getElementById("output").innerHTML = JSON.stringify(data);
