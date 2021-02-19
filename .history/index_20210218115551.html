@@ -88,15 +88,14 @@
         document.getElementById('recordForm').style.display = "none";
         var endPointValue = document.getElementById('endpoint').value;
         fetch(endPointValue, {
-          method: 'get'/*,
+          method: 'get',
           headers: {
             "Content-type": "application/json"
           },
-          body: JSON.stringify({title:titleInput,author:authorInput})*/
+          body: JSON.stringify({title:titleInput,author:authorInput})
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -114,22 +113,19 @@
         var result = window.prompt("Enter record id");
         var endPointValue = document.getElementById('endpoint').value+'/'+result;
         let response = fetch(endPointValue, {
-          method: 'get'/*,
+          method: 'get',
           headers: {
             "Content-type": "application/json"
           },
           body: JSON.stringify({title:titleInput,author:authorInput})
-          */
         })
-        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
         });
-        
+        document.getElementById("output").value = response;
       }
 
       // This function should use fetch to create one entry in the given endpoint.
@@ -156,7 +152,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -188,7 +183,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -207,10 +201,10 @@
         var endPointValue = document.getElementById('endpoint').value+'/'+result;
         fetch(endPointValue, {
           method: 'delete'
+          
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)

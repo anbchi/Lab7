@@ -96,7 +96,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -121,15 +120,13 @@
           body: JSON.stringify({title:titleInput,author:authorInput})
           */
         })
-        .then((response) => response.json())
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
+          document.getElementById("output").innerHTML = data.result;
         })
         .catch(function (error) {
           console.log('Request failed', error)
         });
-        
       }
 
       // This function should use fetch to create one entry in the given endpoint.
@@ -156,7 +153,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -188,7 +184,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -210,7 +205,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)

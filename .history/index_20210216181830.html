@@ -85,23 +85,11 @@
       // the writeup to view the URL pattern for fetch one and fetch all
       function fetchAll() {
         // TODO
-        document.getElementById('recordForm').style.display = "none";
-        var endPointValue = document.getElementById('endpoint').value;
-        fetch(endPointValue, {
-          method: 'get'/*,
-          headers: {
-            "Content-type": "application/json"
-          },
-          body: JSON.stringify({title:titleInput,author:authorInput})*/
+        /*
+        fetch('http://localhost:8000', {
+          method:
         })
-        .then(function (data) {
-          console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
-        })
-        .catch(function (error) {
-          console.log('Request failed', error)
-        });
-        
+        */
       }
 
       // This function should fetch one entry from the given endpoint.
@@ -110,26 +98,6 @@
       // the writeup to view the URL pattern for fetch one and fetch all
       function fetchOne() {
         // TODO
-        document.getElementById('recordForm').style.display = "none";
-        var result = window.prompt("Enter record id");
-        var endPointValue = document.getElementById('endpoint').value+'/'+result;
-        let response = fetch(endPointValue, {
-          method: 'get'/*,
-          headers: {
-            "Content-type": "application/json"
-          },
-          body: JSON.stringify({title:titleInput,author:authorInput})
-          */
-        })
-        .then((response) => response.json())
-        .then(function (data) {
-          console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
-        })
-        .catch(function (error) {
-          console.log('Request failed', error)
-        });
-        
       }
 
       // This function should use fetch to create one entry in the given endpoint.
@@ -141,7 +109,6 @@
         if (param=='show')
         {
           document.getElementById('recordForm').style.display = "block";
-          
           return;
         }
         var titleInput = document.getElementById('title').value;
@@ -156,7 +123,6 @@
         })
         .then(function (data) {
           console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
         })
         .catch(function (error) {
           console.log('Request failed', error)
@@ -167,32 +133,8 @@
       // From the 4 CRUD actions, this is the UPDATE action, and uses the PUT http method.
       // The main difference from createRecord() will be the URL you send data to; check
       // the writeup to view the URL pattern for create and update
-      function updateRecord(param) {
+      function updateRecord() {
         // TODO
-        if (param=='show')
-        {
-          document.getElementById('recordForm').style.display = "block";
-          document.getElementById('recordIDcontainer').style.display = "block";
-          return;
-        }
-        var titleInput = document.getElementById('title').value;
-        var authorInput = document.getElementById('author').value;
-        var idInput = document.getElementById('recordID').value;
-        var endPointValue = document.getElementById('endpoint').value+"/"+idInput;
-        fetch(endPointValue, {
-          method: 'put',
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({title:titleInput,author:authorInput})
-        })
-        .then(function (data) {
-          console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
-        })
-        .catch(function (error) {
-          console.log('Request failed', error)
-        });
       }
 
       // This function should use fetch to delete one existing entry in the given endpoint.
@@ -202,19 +144,6 @@
       // delete all, only delete one.
       function deleteRecord() {
         // TODO
-        document.getElementById('recordForm').style.display = "none";
-        var result = window.prompt("Enter record id");
-        var endPointValue = document.getElementById('endpoint').value+'/'+result;
-        fetch(endPointValue, {
-          method: 'delete'
-        })
-        .then(function (data) {
-          console.log('Request succeeded with JSON response', data)
-          document.getElementById("output").innerHTML = JSON.stringify(data);
-        })
-        .catch(function (error) {
-          console.log('Request failed', error)
-        });
       }
 
       window.addEventListener('DOMContentLoaded', () => {
